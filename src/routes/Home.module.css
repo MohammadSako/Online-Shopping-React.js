@@ -1,0 +1,22 @@
+.home {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/public/images/background.jpg");
+    height: 100vh;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5); /* shadow behind the text */
+    box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5); /* add shadows on edges of the page */
+}
+
+h1 {
+  font-size: 2rem;
+  padding-top: 100px;
+}
