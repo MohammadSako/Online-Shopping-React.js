@@ -33,9 +33,7 @@ const MainHeader = (props) => {
 
               <Nav.Link onClick={props.onShowLogin}>Login</Nav.Link>
 
-              <LinkContainer to="/register">
-                <Nav.Link>Register</Nav.Link>
-              </LinkContainer>
+              <Nav.Link onClick={props.onShowRegister}>Register</Nav.Link>
             </Nav>
             <Form className="d-flex">
               <Form.Control
