@@ -9,3 +9,14 @@
   color: white;
   text-decoration: none;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:hover, 
+a.active {
+  text-decoration: underline;
+}
+
+

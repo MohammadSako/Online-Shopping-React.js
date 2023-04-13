@@ -1,5 +1,5 @@
 import Button from "react-bootstrap/Button";
-import Modal from "../UI/Modal";
+import Modal from "./UI/Modal";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
 
@@ -30,9 +30,7 @@ const Register = (props) => {
         </div>
         <p>
           Already have an account?{" "}
-          <span>
-            <Link onClick={props.onShowLogin}>Login Here</Link>
-          </span>
+          <Link onClick={props.onShowLogin}>Login Here</Link>
         </p>
       </Form>
     </Modal>

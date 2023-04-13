@@ -1,6 +1,6 @@
 import Container from "react-bootstrap/Container";
-import ProductList from "../components/ProductList";
-import CarouselComponent from "../components/Carousel";
+import ProductList from "../components/ProductsItem/ProductList";
+import CarouselComponent from "../components/UI/Carousel";
 
 const OurProducts = () => {
   return (

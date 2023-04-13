@@ -2,15 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./index.css";
-import 'mapbox-gl/dist/mapbox-gl.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "mapbox-gl/dist/mapbox-gl.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import RootLayout from "./routes/Rootlayout";
 import Home from "./routes/Home";
 import OurProducts from "./routes/OurProducts";
 import ContactUs from "./routes/ContactUs";
-import Register from "./routes/Register";
-import Login from "./routes/Login";
-import Cart from "./routes/Cart";
+import Register from "./components/Register";
+import Login from "./components/Login";
+import Cart from "./components/Cart/Cart";
+import { Provider } from "react-redux";
+import store from "./store/index";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

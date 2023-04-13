@@ -2,11 +2,15 @@ import { LinkContainer } from "react-router-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Form from "react-bootstrap/Form";
+// import Form from "react-bootstrap/Form";
 import HeaderCartButton from "./HeaderCartButton";
 import { Fragment } from "react";
 
+
 const MainHeader = (props) => {
+
+  
+
   return (
     <Fragment>
       <Navbar bg="light" expand="sm">
@@ -35,14 +39,14 @@ const MainHeader = (props) => {
 
               <Nav.Link onClick={props.onShowRegister}>Register</Nav.Link>
             </Nav>
-            <Form className="d-flex">
+            {/* <Form className="d-flex">
               <Form.Control
                 type="search"
                 placeholder="Search a product"
                 className="me-2"
                 aria-label="Search"
               />
-            </Form>
+            </Form> */}
             <HeaderCartButton onClick={props.onShowCart} />
           </Navbar.Collapse>
         </Container>

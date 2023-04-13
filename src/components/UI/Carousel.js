@@ -8,12 +8,12 @@ const CarouselComponent = () => {
         <Carousel.Caption></Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src="/images/2ff.jpg" alt="Second slide" />
+        <img className="d-block w-100" src="/images/1vv.jpg" alt="Second slide" />
 
         <Carousel.Caption></Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img className="d-block w-100" src="/images/1vv.jpg" alt="Third slide" />
+        <img className="d-block w-100" src="/images/2ff.jpg" alt="Third slide" />
 
         <Carousel.Caption></Carousel.Caption>
       </Carousel.Item>

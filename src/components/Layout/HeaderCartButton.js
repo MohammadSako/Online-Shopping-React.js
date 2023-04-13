@@ -1,14 +1,9 @@
 import { BsCart3 } from "react-icons/bs";
 import Badge from "react-bootstrap/Badge";
-import { useContext } from "react";
-import CartContext from "../store/cart-context";
+import { useSelector } from "react-redux";
 
 const HeaderCartButton = (props) => {
-  const cartCtx = useContext(CartContext);
-
-  const numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
-    return curNumber + item.amount;
-  }, 0);
+  const cartQuantity = useSelector((state) => state.cart.totalQuantity);
 
   return (
     <div style={{ cursor: "pointer" }} onClick={props.onClick}>
@@ -22,7 +17,7 @@ const HeaderCartButton = (props) => {
           position: "absolute",
         }}
       >
-        {numberOfCartItems}
+        {cartQuantity}
       </Badge>
     </div>
   );

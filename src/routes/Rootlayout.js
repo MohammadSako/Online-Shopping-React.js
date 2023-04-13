@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-import MainHeader from "../components/MainHeader";
-import CartProvider from "../store/cartProvider";
-import Cart from "../routes/Cart";
-import Login from "./Login";
-import Register from "./Register";
+import MainHeader from "../components/Layout/MainHeader";
+import Cart from "../components/Cart/Cart";
+import Login from "../components/Login";
+import Register from "../components/Register";
 // import Footer from "../components/Footer";
 
 const RootLayout = () => {
@@ -32,18 +31,22 @@ const RootLayout = () => {
   const hideRegisterHandler = () => {
     setRegisterIsShown(false);
   };
-
+  // useReducer here..
   return (
-    <CartProvider>
+    <>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       {loginIsShown && <Login onClose={hideLoginHandler} />}
       {registerIsShown && <Register onClose={hideRegisterHandler} />}
-      <MainHeader onShowCart={showCartHandler} onShowLogin={showLoginHandler} onShowRegister={showRegisterHandler} />
+      <MainHeader
+        onShowCart={showCartHandler}
+        onShowLogin={showLoginHandler}
+        onShowRegister={showRegisterHandler}
+      />
       <main>
         <Outlet />
       </main>
       {/* <Footer /> */}
-    </CartProvider>
+    </>
   );
 };
 
