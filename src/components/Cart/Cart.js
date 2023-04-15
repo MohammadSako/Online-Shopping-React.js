@@ -2,14 +2,15 @@ import { useSelector } from "react-redux";
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
-
+import { Row } from "react-bootstrap";
 const Cart = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
 
   return (
     <Modal onClose={props.onClose}>
-      <h2>Cart</h2>
-      <ul>
+      <h2>Cart Items</h2>
+
+      <Row>
         {cartItems.map((item) => (
           <CartItem
             key={item.id}
@@ -19,12 +20,12 @@ const Cart = (props) => {
               quantity: item.quantity,
               total: item.totalPrice,
               price: item.price,
-              image: item.image
+              image: item.image,
+              discription: item.discription,
             }}
           />
         ))}
-      </ul>
-
+      </Row>
       <div className={classes.actions}>
         <button className={classes["button--alt"]} onClick={props.onClose}>
           Close
