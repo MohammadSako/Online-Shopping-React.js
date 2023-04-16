@@ -94,7 +94,7 @@ const ProductList = () => {
     <ul>
       <Row>
         {Products.map((product) => (
-          <Col sm>
+          <Col key={product.id} >
             <Cards
               key={product.id}
               id={product.id}

@@ -1,10 +1,21 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Modal from "../UI/Modal";
 import classes from "./Cart.module.css";
 import CartItem from "./CartItem";
 import { Row } from "react-bootstrap";
+import { useEffect } from "react";
+import { cartActions } from "../../store/cart-slice";
+
 const Cart = (props) => {
+  // const dispatch = useDispatch();
+
   const cartItems = useSelector((state) => state.cart.items);
+  // const totalAllPrices = useSelector(state => state.cart.totalAllPrice)
+  
+
+  // useEffect(() => {
+  //   dispatch(cartActions.TotalAllItems());
+  // }, [cartItems, dispatch]);
 
   return (
     <Modal onClose={props.onClose}>
@@ -31,6 +42,7 @@ const Cart = (props) => {
           Close
         </button>
       </div>
+      {/* <h3>Total: {totalAllPrices}</h3> */}
     </Modal>
   );
 };
