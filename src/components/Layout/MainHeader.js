@@ -6,11 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import HeaderCartButton from "./HeaderCartButton";
 import { Fragment } from "react";
 
-
 const MainHeader = (props) => {
-
-  
-
   return (
     <Fragment>
       <Navbar bg="light" expand="sm">

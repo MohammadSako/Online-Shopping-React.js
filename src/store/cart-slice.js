@@ -39,35 +39,16 @@ const cartSlice = createSlice({
       }
     },
 
-    TotalAllItems(state) {
+    totalAllItems(state, action) {
       let amount = 0;
       let total = 0;
       state.items.forEach((item) => {
-        amount += item.amount;
-        total += item.amount * item.price;
+        amount += item.quantity;
+        total += item.quantity * item.price;
       });
       state.totalQuantity = amount;
       state.totalAllPrice = total;
     },
-
-    // TotalAllItems(state, action) {
-    //   let { total, quantity } = state.items.reduce(
-    //     (cartTotal, cartItem) => {
-    //       const { price, cartQty } = cartItem;
-    //       const itemTotal = price * cartQty;
-
-    //       cartTotal.total += itemTotal;
-    //       cartTotal.quantity += cartQty;
-    //       return cartTotal;
-    //     },
-    //     {
-    //       total: 0,
-    //       quantity: 0,
-    //     }
-    //   );
-    //   state.totalQuantity = quantity;
-    //   state.totalAllPrice = total;
-    // },
   },
 });
 

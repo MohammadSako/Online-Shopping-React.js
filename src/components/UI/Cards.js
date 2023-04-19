@@ -7,6 +7,7 @@ const Cards = (props) => {
   const { title, price, description, id, image } = props;
 
   const dispatch = useDispatch();
+
   const addToCartHandler = () => {
     dispatch(
       cartActions.addItemToCart({
@@ -18,7 +19,7 @@ const Cards = (props) => {
       })
     );
   };
-
+  
   return (
     <Card style={{ width: "12rem", marginBottom: "20px" }}>
       <Card.Img style={{ padding: 10 }} variant="top" src={props.image} />

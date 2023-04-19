@@ -7,15 +7,15 @@ import { useEffect } from "react";
 import { cartActions } from "../../store/cart-slice";
 
 const Cart = (props) => {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const cartItems = useSelector((state) => state.cart.items);
-  // const totalAllPrices = useSelector(state => state.cart.totalAllPrice)
-  
+  const totalAllPrices = useSelector((state) => state.cart.totalAllPrice)
+  console.log(totalAllPrices);
 
-  // useEffect(() => {
-  //   dispatch(cartActions.TotalAllItems());
-  // }, [cartItems, dispatch]);
+  useEffect(() => {
+    dispatch(cartActions.totalAllItems());
+  }, [cartItems, dispatch]);
 
   return (
     <Modal onClose={props.onClose}>
@@ -42,7 +42,7 @@ const Cart = (props) => {
           Close
         </button>
       </div>
-      {/* <h3>Total: {totalAllPrices}</h3> */}
+      <h3>Total: {totalAllPrices.toFixed(2)} JD</h3>
     </Modal>
   );
 };

@@ -48,7 +48,7 @@ const CartItem = (props) => {
           {quantity} X <span style={{ color: "Red" }}>({price.toFixed(2)} JD /item)</span>
         </Card.Text>
         <Card.Subtitle className="mb-2 text-muted">
-        <h5 className="text-muted">Price: <span style={{ color: "Red" }}>{total.toFixed(2)}</span> JD</h5>
+        <h5 className="text-muted">Total: <span style={{ color: "Red" }}>{total.toFixed(2)}</span> JD</h5>
         </Card.Subtitle>
         <ButtonGroup className="me-2">
           <Button onClick={removeItem}>
