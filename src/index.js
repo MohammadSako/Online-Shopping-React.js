@@ -11,6 +11,7 @@ import ContactUs from "./routes/ContactUs";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Cart from "./components/Cart/Cart";
+import Checkout from "./routes/Checkout";
 import { Provider } from "react-redux";
 import store from "./store/index";
 
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
     ],
   },
