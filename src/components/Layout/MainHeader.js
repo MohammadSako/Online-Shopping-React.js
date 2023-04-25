@@ -7,12 +7,13 @@ import HeaderCartButton from "./HeaderCartButton";
 import { Fragment } from "react";
 
 const MainHeader = (props) => {
+  
   return (
     <Fragment>
       <Navbar bg="white" expand="md">
         <Container>
           <LinkContainer to="/">
-            <Navbar.Brand>Grocery Shop</Navbar.Brand>
+            <Navbar.Brand>Online Shop</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">

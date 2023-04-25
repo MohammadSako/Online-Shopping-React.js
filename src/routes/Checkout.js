@@ -5,10 +5,13 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Classes from "./Checkout.module.css";
 import Container from "react-bootstrap/Container";
+import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalPrice = useSelector((state) => state.cart.totalAllPrice);
+
   return (
     <Container>
       <h1>Checkout</h1>
@@ -33,7 +36,7 @@ const Checkout = () => {
         </Col>
       </Row>
       <Row style={{ margin: "10px 0 30px 0" }}>
-        <Col md={{ offset: 1 }}>
+        <Col>
           <PayPalScriptProvider options={{ "client-id": "test" }}>
             <PayPalButtons style={{ layout: "horizontal" }} />
           </PayPalScriptProvider>
@@ -81,6 +84,15 @@ const Checkout = () => {
           <p>* Only the selected items above will be assembled upon delivery</p>
         </Col>
       </Row>
+      <Link to="/cartpage">
+        <Button
+          style={{ marginBottom: 30 }}
+          className={Classes.checkoutBtn}
+          variant="primary"
+        >
+          Back to the Cart
+        </Button>
+      </Link>
     </Container>
   );
 };
