@@ -28,29 +28,7 @@
   margin: 5px;
 }
 .actions button {
-  /* font: inherit; */
-  /* cursor: pointer; */
-  /* background-color: transparent; */
-  /* border: 1px solid #8a2b06; */
-  border-radius: 25px;
+  border-radius: 22px;
   margin-left: 1rem;
   text-align: "end"
 }
-
-/* 
-.actions button:hover,
-.actions button:active {
-  background-color: #5a1a01;
-  border-color: #5a1a01;
-  color: white;
-} */
-
-/* .actions .button--alt {
-  margin-top: 30px;
-  color: #8a2b06;
-} */
-
-/* .actions .button {
-  background-color: #8a2b06;
-  color: white;
-} */

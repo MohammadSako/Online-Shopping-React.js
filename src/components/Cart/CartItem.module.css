@@ -1,3 +1,23 @@
+
+.line {
+  border-top: 1px solid #d3d3d3;
+  position: relative;
+}
+
+.row {
+  padding: 2.5rem 0;
+}
+
+.image {
+  height: 8.75rem;
+  max-height: 8.75rem;
+  max-width: 8.75rem;
+  width: 8.75rem;
+}
+
+
+
+/* 
 .cart-item {
   display: flex;
   justify-content: space-between;
@@ -54,4 +74,4 @@
 .cart-item button:active {
   background-color: #8a2b06;
   color: white;
-}
+} */

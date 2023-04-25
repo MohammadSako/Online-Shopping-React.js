@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 
 const Footer = () => {
   return (
-    <Container>
+    <Container style={{backgroundColor:'rgb(var(--colour-neutral-2, 244, 245, 245))', padding:20}}>
       <Row>
         <Col>
           <h6>Grocery Shop</h6>

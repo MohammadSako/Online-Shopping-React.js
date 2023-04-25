@@ -9,7 +9,7 @@ import { Fragment } from "react";
 const MainHeader = (props) => {
   return (
     <Fragment>
-      <Navbar bg="light" expand="sm">
+      <Navbar bg="white" expand="md">
         <Container>
           <LinkContainer to="/">
             <Navbar.Brand>Grocery Shop</Navbar.Brand>

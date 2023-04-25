@@ -4,7 +4,7 @@ import MainHeader from "../components/Layout/MainHeader";
 import Cart from "../components/Cart/Cart";
 import Login from "../components/Login";
 import Register from "../components/Register";
-// import Footer from "../components/Footer";
+import Footer from "../components/Layout/Footer";
 
 const RootLayout = () => {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -45,7 +45,7 @@ const RootLayout = () => {
       <main>
         <Outlet />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

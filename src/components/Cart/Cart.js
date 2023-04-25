@@ -14,6 +14,7 @@ const Cart = (props) => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalAllPrices = useSelector((state) => state.cart.totalAllPrice);
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
+  const totalItems = useSelector((state) => state.cart.totalQuantity);
 
   //Cart Empty Msg
   const [cartEmpty, setCartEmpty] = useState(true);
@@ -35,12 +36,14 @@ const Cart = (props) => {
     <Modal onClose={props.onClose}>
       <Row>
         {!cartEmpty && (
-          <Col>
+          <Col >
             <h2>Cart Items</h2>
+            <h6>{totalItems} items in total</h6>
           </Col>
         )}
+        {cartEmpty && <h3>Cart is Empty</h3>}
         <Col className={classes.actions}>
-          <Button variant="outline-danger" onClick={props.onClose}>
+          <Button variant="danger" onClick={props.onClose}>
             X
           </Button>
         </Col>
@@ -68,8 +71,13 @@ const Cart = (props) => {
       {!cartEmpty && (
         <Row>
           <Col className={classes.actions}>
-            <Link to="/checkout"  onClick={props.onClose}>
+            <Link to="/cartpage"  onClick={props.onClose}>
               <Button className={classes.order} variant="outline-primary">
+                View Cart
+              </Button>
+            </Link>
+            <Link to="/checkout"  onClick={props.onClose}>
+              <Button className={classes.order} variant="primary">
                 Checkout
               </Button>
             </Link>
@@ -87,7 +95,7 @@ const Cart = (props) => {
         </Row>
       )}
 
-      {cartEmpty && <h3>Cart is Empty</h3>}
+      
     </Modal>
   );
 };

@@ -1,74 +1,84 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { cartActions } from "../store/cart-slice";
-import CartItem from "../components/Cart/CartItem";
-import Container from 'react-bootstrap/Container';
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import Table from "react-bootstrap/Table";
+import { useSelector } from "react-redux";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Button } from "react-bootstrap";
-import { RiSecurePaymentLine } from "react-icons/ri";
-import { TbTruckReturn } from "react-icons/tb";
+import Classes from "./Checkout.module.css";
+import Container from "react-bootstrap/Container";
 
-const Checkout = (props) => {
-  const dispatch = useDispatch();
+const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.items);
-  const totalAllPrices = useSelector((state) => state.cart.totalAllPrice);
-
-  //SubTotal
-  useEffect(() => {
-    dispatch(cartActions.totalAllItems());
-  }, [cartItems, dispatch]);
-
+  const totalPrice = useSelector((state) => state.cart.totalAllPrice);
   return (
     <Container>
       <h1>Checkout</h1>
       <Row>
-        <Col md={{ span: 5, offset: 1 }} style={{marginBottom:20}} >
-          {cartItems.map((item) => (
-            <CartItem
-              key={item.id}
-              item={{
-                id: item.id,
-                name: item.name,
-                quantity: item.quantity,
-                total: item.totalPrice,
-                price: item.price,
-                image: item.image,
-                discription: item.discription,
-              }}
-            />
-          ))}
+        <Col md={{ offset: 8 }}>
+          <h6>
+            Order Total:{" "}
+            <span className={Classes.productUnderLineSpan2}>
+              {totalPrice}
+              <span
+                className={Classes.productUnderLineSpan3}
+                style={{
+                  fontSize: "1.0625rem",
+                  top: "-0.46em",
+                  position: "relative",
+                }}
+              >
+                JD
+              </span>
+            </span>
+          </h6>
         </Col>
-        <Col md={{ span: 5, offset: 1 }} style={{marginBottom:20}} >
-          <h5>Order Summary</h5>
-          <Row>
-            <Col>Products</Col>
-            <Col>{totalAllPrices} JD</Col>
-          </Row>
-          <hr />
-          <Row>
-            <Col>
-              <h5>Subtotal incl. VAT</h5>
-            </Col>
-            <Col>
-              <h3>{totalAllPrices} JD</h3>
-            </Col>
-            <p>By clicking "check out" you're agreeing to our Privacy Policy</p>
-            <Button
-              style={{ borderRadius: 25, padding: "0.5rem, 2rem", marginBottom:20 }}
-              variant="outline-primary"
-            >
-              Checkout
-            </Button>
-            <p><TbTruckReturn  size={25}/> 90 days to change your mind</p>
-            <p><RiSecurePaymentLine size={25}/> Secure shopping with SSL encryption</p>
-          </Row>
-          <Button
-            style={{ borderRadius: 25, padding: "0.5rem, 2rem" }}
-            variant="outline-primary"
-          >
-            Back
-          </Button>
+      </Row>
+      <Row style={{ margin: "10px 0 30px 0" }}>
+        <Col md={{ offset: 1 }}>
+          <PayPalScriptProvider options={{ "client-id": "test" }}>
+            <PayPalButtons style={{ layout: "horizontal" }} />
+          </PayPalScriptProvider>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cartItems.map((item) => (
+                <tr key={item.id}>
+                  <td>
+                    <img
+                      className={Classes.image}
+                      src={item.image}
+                      alt=""
+                    ></img>
+                  </td>
+                  <td>{item.name}</td>
+                  <td>{item.quantity}</td>
+                  <td>{item.price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </Col>
+      </Row>
+      <Row style={{ marginBottom: 30 }}>
+        <h6>Order Total: {totalPrice} JD</h6>
+      </Row>
+      <Row style={{ marginBottom: 30 }}>
+        <Col>
+          <p>
+            You can change the delivery date or time by calling our call center
+            48 hours before original delivery date.
+          </p>
+          <p>* Only the selected items above will be assembled upon delivery</p>
         </Col>
       </Row>
     </Container>
