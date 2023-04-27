@@ -11,7 +11,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 
-const Checkout = (props) => {
+const CartPage = (props) => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
   const totalItems = useSelector((state) => state.cart.totalQuantity);
@@ -73,4 +73,4 @@ const Checkout = (props) => {
   );
 };
 
-export default Checkout;
+export default CartPage;

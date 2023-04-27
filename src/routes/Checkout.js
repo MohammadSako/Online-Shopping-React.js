@@ -16,8 +16,8 @@ const Checkout = () => {
     <Container>
       <h1>Checkout</h1>
       <Row>
-        <Col md={{ offset: 8 }}>
-          <h6>
+        <Col>
+          <h5>
             Order Total:{" "}
             <span className={Classes.productUnderLineSpan2}>
               {totalPrice}
@@ -32,7 +32,7 @@ const Checkout = () => {
                 JD
               </span>
             </span>
-          </h6>
+          </h5>
         </Col>
       </Row>
       <Row style={{ margin: "10px 0 30px 0" }}>

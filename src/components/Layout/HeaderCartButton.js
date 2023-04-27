@@ -8,6 +8,15 @@ const HeaderCartButton = (props) => {
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
   
   
+  const [cartEmpty, setCartEmpty] = useState(false);
+  useEffect(() => {
+    if (cartQuantity > 0) {
+      setCartEmpty(true);
+    } else {
+      setCartEmpty(false);
+    }
+  }, [cartQuantity]);
+
   //cart Bump when clicked
   const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
   const btnClasses = `${classes.button} ${
@@ -26,25 +35,26 @@ const HeaderCartButton = (props) => {
     };
   }, [cartQuantity]);
 
-
   return (
     <div
       className={btnClasses}
-      style={{ cursor: "pointer" }}
+      style={{ cursor: "pointer", margin:'5px 0 0 5px' }}
       onClick={props.onClick}
     >
       <BsCart3 size={25} color="#757686" />
-      <Badge
-        bg="primary"
-        style={{
-          borderRadius: 15,
-          marginLeft: -8,
-          marginTop: -10,
-          position: "absolute",
-        }}
-      >
-        {cartQuantity}
-      </Badge>
+      {cartEmpty && (
+        <Badge
+          bg="primary"
+          style={{
+            borderRadius: 15,
+            marginLeft: -8,
+            marginTop: -8,
+            position: "absolute",
+          }}
+        >
+          {cartQuantity}
+        </Badge>
+      )}
     </div>
   );
 };

@@ -19,8 +19,7 @@
   text-align: right;
 }
 .actionsTotal {
-  text-align: left;
-  margin-top: -42px;
+  margin: 10px 12px 0 0;
 }
 .order {
   border-radius: 25px;
@@ -29,6 +28,6 @@
 }
 .actions button {
   border-radius: 22px;
-  margin-left: 1rem;
-  text-align: "end"
+  text-align: "end";
+  margin: 20px 9px 10px 0;
 }
