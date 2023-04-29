@@ -9,6 +9,7 @@ const HeaderCartButton = (props) => {
   
   
   const [cartEmpty, setCartEmpty] = useState(false);
+  
   useEffect(() => {
     if (cartQuantity > 0) {
       setCartEmpty(true);
@@ -22,6 +23,7 @@ const HeaderCartButton = (props) => {
   const btnClasses = `${classes.button} ${
     btnIsHighlighted ? classes.bump : ""
   }`;
+
   useEffect(() => {
     if (cartQuantity.length === 0) {
       return;
@@ -38,7 +40,7 @@ const HeaderCartButton = (props) => {
   return (
     <div
       className={btnClasses}
-      style={{ cursor: "pointer", margin:'5px 0 0 5px' }}
+      style={{ cursor: "pointer", margin:'0 0 0 0' }}
       onClick={props.onClick}
     >
       <BsCart3 size={25} color="#757686" />
@@ -47,7 +49,7 @@ const HeaderCartButton = (props) => {
           bg="primary"
           style={{
             borderRadius: 15,
-            marginLeft: -8,
+            marginLeft: -12,
             marginTop: -8,
             position: "absolute",
           }}

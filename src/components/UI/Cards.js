@@ -21,7 +21,7 @@ const Cards = (props) => {
   };
 
   return (
-    <Card style={{ width: "18rem", marginBottom: 20 }}>
+    <Card style={{ width: "18rem", margin: "20px 0 20px 0",boxShadow: "0px 0px 15px 0px #dcd6ce" }}>
       <Card.Img style={{ padding: 20 }} variant="top" src={props.image} />
       <Card.Body style={{ margin: "auto" }}>
         <Card.Title as="h4">{props.title}</Card.Title>

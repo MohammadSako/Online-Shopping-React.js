@@ -55,9 +55,9 @@ const Footer = () => {
           </ul>
         </Col>
       </Row>
-      <Row style={{ margin: "20px 0 20px 0" }}>
+      <Row>
         <Col md={7}>
-          <Row>
+          <Row className={Classes.row}>
             <Col>
               <p>
                 <AiFillFacebook size={30} />
@@ -82,8 +82,15 @@ const Footer = () => {
         </Col>
       </Row>
       <hr />
-      <Row>
-        <p>By: Mohammad Talal Murad Al Shishani 2023</p>
+      <Row className={Classes.row}>
+        <Col>
+          <p>
+            <span className={Classes.span}>By:</span> Mohammad Talal Murad Al Shishani 2023
+          </p>
+          <p>
+            <span className={Classes.span}>Email:</span> mohammad.talal.murad@gmail.com
+          </p>
+        </Col>
       </Row>
     </Container>
   );

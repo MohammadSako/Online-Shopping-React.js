@@ -52,81 +52,46 @@
 // };
 // export default MainHeader;
 
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
-import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Offcanvas from "react-bootstrap/Offcanvas";
 import { LinkContainer } from "react-router-bootstrap";
 import HeaderCartButton from "./HeaderCartButton";
 import { Fragment } from "react";
 
-const MainHeader = (props) => {
+function MainHeader(props) {
   return (
     <Fragment>
-      {[false].map((expand) => (
-        <Navbar key={expand} bg="white" expand={expand}>
-          <Container>
+    <Navbar collapseOnSelect expand="lg" bg="none" variant="white">
+      <Container>
+        <LinkContainer to="/">
+          <Navbar.Brand href="#home">Online Shop</Navbar.Brand>
+        </LinkContainer>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
             <LinkContainer to="/">
-              <Navbar.Brand>Online Shop</Navbar.Brand>
+              <Nav.Link>Home</Nav.Link>
             </LinkContainer>
-            <Nav className="me-auto" style={{ flexDirection: "inherit" }}>
-              <LinkContainer to="/">
-                <Nav.Link>Home</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/products" style={{ marginLeft: 10 }}>
-                <Nav.Link>Products</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to="/contact" style={{ marginLeft: 10 }}>
-                <Nav.Link>Contact</Nav.Link>
-              </LinkContainer>
-              <Nav.Link onClick={props.onShowLogin} style={{ marginLeft: 10 }}>
-                Login
-              </Nav.Link>
-              <Nav.Link
-                onClick={props.onShowRegister}
-                style={{ marginLeft: 10 }}
-              >
-                Register
-              </Nav.Link>
+            <LinkContainer to="/products">
+              <Nav.Link>Our Products</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/contact">
+              <Nav.Link>Contact Us</Nav.Link>
+            </LinkContainer>
+            <Nav.Link onClick={props.onShowLogin}>Login</Nav.Link>
+            <Nav.Link onClick={props.onShowRegister}>Register</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets">
               <HeaderCartButton onClick={props.onShowCart} />
-            </Nav>
-
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
-            <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end"
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
-                </Nav>
-                <HeaderCartButton onClick={props.onShowCart} />
-                <hr />
-                <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
-                </Form>
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
-          </Container>
-        </Navbar>
-      ))}
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     </Fragment>
   );
-};
+}
 
 export default MainHeader;
