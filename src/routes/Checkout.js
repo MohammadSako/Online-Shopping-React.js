@@ -20,7 +20,7 @@ const Checkout = () => {
           <h5>
             Order Total:{" "}
             <span className={Classes.productUnderLineSpan2}>
-              {totalPrice}
+              {totalPrice.toFixed(2)}
               <span
                 className={Classes.productUnderLineSpan3}
                 style={{
@@ -73,7 +73,7 @@ const Checkout = () => {
         </Col>
       </Row>
       <Row style={{ marginBottom: 30 }}>
-        <h6>Order Total: {totalPrice} JD</h6>
+        <h5>Order total: <span style={{fontSize: "1.875rem"}}>{totalPrice.toFixed(2)}</span>JD</h5>
       </Row>
       <Row style={{ marginBottom: 30 }}>
         <Col>

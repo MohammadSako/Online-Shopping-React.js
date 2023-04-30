@@ -24,7 +24,7 @@ const OrderSummary = (props) => {
         <div className={Classes.orderProductsDiv}>
           <span className={Classes.orderProductsDivSpan}>Products</span>
           <span className={Classes.orderProductsDivSpanJd}>
-            JD {totalAllPrices}
+            JD {totalAllPrices.toFixed(2)}
           </span>
         </div>
       </Row>
@@ -46,7 +46,7 @@ const OrderSummary = (props) => {
             >
               JD
             </span>
-            {totalAllPrices}
+            {totalAllPrices.toFixed(2)}
           </span>
         </div>
         <p className={Classes.productUnderLineP}>
