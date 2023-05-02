@@ -6,10 +6,9 @@ import { BsCart3 } from "react-icons/bs";
 
 const HeaderCartButton = (props) => {
   const cartQuantity = useSelector((state) => state.cart.totalQuantity);
-  
-  
+
   const [cartEmpty, setCartEmpty] = useState(false);
-  
+
   useEffect(() => {
     if (cartQuantity > 0) {
       setCartEmpty(true);
@@ -40,7 +39,7 @@ const HeaderCartButton = (props) => {
   return (
     <div
       className={btnClasses}
-      style={{ cursor: "pointer", margin:'0 0 0 0' }}
+      style={{ cursor: "pointer" }}
       onClick={props.onClick}
     >
       <BsCart3 size={25} color="#757686" />

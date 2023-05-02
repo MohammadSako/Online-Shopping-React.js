@@ -38,7 +38,9 @@ const Checkout = () => {
       <Row style={{ margin: "10px 0 30px 0" }}>
         <Col>
           <PayPalScriptProvider options={{ "client-id": "test" }}>
-            <PayPalButtons style={{ layout: "horizontal" }} />
+            <PayPalButtons
+              style={{ color: "blue", shape: "pill", label: "pay", height: 40, position:'relative' }}
+            />
           </PayPalScriptProvider>
         </Col>
       </Row>
@@ -73,7 +75,11 @@ const Checkout = () => {
         </Col>
       </Row>
       <Row style={{ marginBottom: 30 }}>
-        <h5>Order total: <span style={{fontSize: "1.875rem"}}>{totalPrice.toFixed(2)}</span>JD</h5>
+        <h5>
+          Order total:{" "}
+          <span style={{ fontSize: "1.875rem" }}>{totalPrice.toFixed(2)}</span>
+          JD
+        </h5>
       </Row>
       <Row style={{ marginBottom: 30 }}>
         <Col>
