@@ -69,9 +69,11 @@ const OrderSummary = (props) => {
           </span>
         </p>
       </Row>
+      <Link to='/products'>
       <Button className={Classes.button} variant="outline-primary">
         Back
       </Button>
+      </Link>
     </div>
   );
 };
