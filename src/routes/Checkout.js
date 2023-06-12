@@ -21,7 +21,6 @@ const Checkout = () => {
     dispatch(cartActions.totalAllItems());
     if (totalItems === 0) {
       setCartEmpty(false);
-      localStorage.clear("items")
     } if (totalItems > 0) {
       setCartEmpty(true);
     }
