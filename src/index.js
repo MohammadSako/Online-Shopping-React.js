@@ -60,7 +60,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} basename="/tothepoint_login" />
+      <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );
