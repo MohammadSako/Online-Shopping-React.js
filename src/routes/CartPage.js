@@ -22,7 +22,8 @@ const CartPage = (props) => {
     dispatch(cartActions.totalAllItems());
     if (totalItems === 0) {
       setCartEmpty(true);
-    } if (totalItems > 0) {
+    }
+    if (totalItems > 0) {
       setCartEmpty(false);
     }
   }, [cartItems, totalItems, dispatch]);

@@ -10,7 +10,9 @@ const Home = () => {
       <p>Jump right in and explore our many fresh products.</p>
 
       <Link to="/products">
-        <Button className={Classes.homeButton} variant="light">Go Shopping</Button>{" "}
+        <Button className={Classes.homeButton} variant="light">
+          Go Shopping
+        </Button>{" "}
       </Link>
     </div>
   );

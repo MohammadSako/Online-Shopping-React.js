@@ -15,7 +15,8 @@ const OurProducts = () => {
     dispatch(cartActions.totalAllItems());
     if (totalItems === 0) {
       setCartEmpty(false);
-    } if (totalItems > 0) {
+    }
+    if (totalItems > 0) {
       setCartEmpty(true);
     }
   }, [cartItems, totalItems, dispatch]);

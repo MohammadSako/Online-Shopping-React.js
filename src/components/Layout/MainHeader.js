@@ -25,8 +25,8 @@ function MainHeader(props) {
             <LinkContainer to="/contact">
               <Nav.Link>Contact Us</Nav.Link>
             </LinkContainer>
-            <Nav.Link onClick={props.onShowLogin}>Login</Nav.Link>
-            <Nav.Link onClick={props.onShowRegister}>Register</Nav.Link>
+            {/* <Nav.Link onClick={props.onShowLogin}>Login</Nav.Link> */}
+            {/* <Nav.Link onClick={props.onShowRegister}>Register</Nav.Link> */}
           </Nav>
           <Nav>
             <Nav.Link href="#deets">
