@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useEffect } from "react";
 import { useState } from "react";
+import { Container } from "react-bootstrap";
 // import { MongoClient } from "mongodb";
 
 const ProductList = () => {
@@ -55,22 +56,20 @@ const ProductList = () => {
   }
 
   return (
-    <ul>
-      <Row>
-        {products.map((product) => (
-          <Col key={product.id}>
-            <Cards
-              key={product.id}
-              id={product.id}
-              title={product.title}
-              image={product.image}
-              price={product.price}
-              description={product.description}
-            />
-          </Col>
-        ))}
-      </Row>
-    </ul>
+    <Row>
+      {products.map((product) => (
+        <Col lg={3}>
+          <Cards
+            key={product.id}
+            id={product.id}
+            title={product.title}
+            image={product.image}
+            price={product.price}
+            description={product.description}
+          />
+        </Col>
+      ))}
+    </Row>
   );
 };
 

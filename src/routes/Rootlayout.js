@@ -31,7 +31,6 @@ const RootLayout = () => {
   const hideRegisterHandler = () => {
     setRegisterIsShown(false);
   };
-  // useReducer here..
   return (
     <>
       {cartIsShown && <Cart onClose={hideCartHandler} />}

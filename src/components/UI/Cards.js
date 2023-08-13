@@ -19,21 +19,26 @@ const Cards = (props) => {
       })
     );
   };
-
   return (
-    <Card style={{ width: "18rem", margin: "20px 0 20px 0",boxShadow: "0px 0px 15px 0px #dcd6ce" }}>
-      <Card.Img style={{ padding: 20, minHeight:300, maxHeight:300 }} variant="top" src={props.image} />
-      <Card.Body style={{ margin: "auto" }}>
+    <Card style={{ marginTop: 20, boxShadow: "0px 0px 15px 0px #dcd6ce" }}>
+      <Card.Img
+        style={{
+          padding: 20,
+          minWidth: 300,
+          maxWidth: 300,
+          minHeight: 300,
+          maxHeight: 300,
+        }}
+        variant="top"
+        src={props.image}
+      />
+      <Card.Body>
         <Card.Title as="h4">{props.title}</Card.Title>
         <Card.Title as="h4" style={{ color: "red" }}>
           {price} JD
         </Card.Title>
         <Card.Text>{props.description}</Card.Text>
-        <Button
-          style={{ width: 250 }}
-          variant="primary"
-          onClick={addToCartHandler}
-        >
+        <Button variant="primary" onClick={addToCartHandler}>
           Add to Cart
         </Button>
       </Card.Body>
